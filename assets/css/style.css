@@ -1,11 +1,3 @@
-/**
-* Template Name: Bootslander
-* Updated: Aug 30 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -80,7 +72,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #1acc8d;
+  background: #FF7600;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -128,8 +120,12 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(1, 4, 136, 0.9);
+  background: #fff;
   height: 60px;
+}
+
+#header.header-scrolled a.nav-link {
+  color: blue;
 }
 
 #header .logo h1 {
@@ -149,7 +145,20 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 150px;
+  cursor: pointer;
+}
+
+#header .logo img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; 
+  opacity: 0.5; 
+  z-index: 1; 
 }
 
 /*--------------------------------------------------------------
@@ -202,7 +211,7 @@ h6 {
   height: 2px;
   bottom: 3px;
   left: 30px;
-  background-color: #1acc8d;
+  background-color: #FF7600;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -393,14 +402,7 @@ h6 {
   font-size: 12px;
 }
 
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a,
-.navbar-mobile .dropdown .dropdown ul a:hover,
-.navbar-mobile .dropdown .dropdown ul .active:hover,
-.navbar-mobile .dropdown .dropdown ul li:hover>a {
-  color: #1acc8d;
-}
+
 
 .navbar-mobile .dropdown>.dropdown-active,
 .navbar-mobile .dropdown .dropdown>.dropdown-active {
@@ -437,7 +439,7 @@ h6 {
 
 #hero h1 span {
   color: #fff;
-  border-bottom: 4px solid #1acc8d;
+  border-bottom: 4px solid #FF7600;
 }
 
 #hero h2 {
@@ -456,11 +458,11 @@ h6 {
   border-radius: 50px;
   transition: 0.5s;
   color: #fff;
-  background: #1acc8d;
+  background: #e46d05;
 }
 
 #hero .btn-get-started:hover {
-  background: #17b57d;
+  background: #FF7600;
 }
 
 #hero .animated {
@@ -606,7 +608,7 @@ section {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: #1acc8d;
+  background: #FF7600;
   margin: 4px 10px;
 }
 
@@ -707,19 +709,19 @@ section {
   justify-content: center;
   width: 64px;
   height: 64px;
-  border: 2px solid #7ceec6;
+  border: 2px solid #FF7600;
   border-radius: 50px;
   transition: 0.5s;
 }
 
 .about .icon-box .icon i {
-  color: #1acc8d;
+  color: #FF7600;
   font-size: 32px;
 }
 
 .about .icon-box:hover .icon {
-  background: #1acc8d;
-  border-color: #1acc8d;
+  background: #FF7600;
+  border-color: #FF7600;
 }
 
 .about .icon-box:hover .icon i {
@@ -739,7 +741,7 @@ section {
 }
 
 .about .icon-box .title a:hover {
-  color: #1acc8d;
+  color: #FF7600;
 }
 
 .about .icon-box .description {
@@ -845,13 +847,21 @@ section {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  left: 50%;
+}
+
+.pricing .container .pricing-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .pricing h3 {
   font-weight: 400;
   margin: -20px -20px 20px -20px;
   padding: 20px 15px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   color: #777777;
   background: #f8f8f8;
@@ -859,7 +869,7 @@ section {
 
 .pricing h4 {
   font-size: 36px;
-  color: #1acc8d;
+  color: #FF7600;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   margin-bottom: 20px;
@@ -909,7 +919,7 @@ section {
 }
 
 .pricing .btn-buy {
-  background: #1acc8d;
+  background: #f07306;
   display: inline-block;
   padding: 8px 35px 10px 35px;
   border-radius: 50px;
@@ -923,12 +933,12 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  background: #149f6e;
+  background: #FF7600;
 }
 
 .pricing .featured h3 {
   color: #fff;
-  background: #1acc8d;
+  background: #FF7600;
 }
 
 .pricing .advanced {
@@ -940,8 +950,29 @@ section {
   z-index: 1;
   font-size: 14px;
   padding: 1px 0 3px 0;
-  background: #1acc8d;
+  background: #FF7600;
   color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+    .pricing .box {
+      left: 0%;
+    }
+    .pricing .row {
+      flex-wrap: wrap;
+    }
+    .box.featured {
+      margin-top: 23px;
+    }
+    .pricing .row .box.last-child {
+      left: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .pricing .row .box.last-child {
+    left: 0;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -953,6 +984,9 @@ section.ksn .container {
 section.ksn .container .title {
   margin-bottom: 80px;
 }
+section.ksn .container .title h1 {
+  color: #0205a1;
+}
 section.ksn .container .icon {
   display: flex;
   justify-content: start;
@@ -963,7 +997,7 @@ section.ksn .container .icon {
 section.ksn .container .icon i {
   font-size: 40px;
   position: relative;
-  color: lightgreen;
+  color: #FF7600;
 }
 section.ksn .container .icon h3 {
   align-items: center;
@@ -976,6 +1010,7 @@ section.ksn .row{
 section.ksn .row .col-4{
   float: left;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 992px) {
@@ -1019,21 +1054,25 @@ section.banner {
   flex-direction: column;
 }
 
-.alternative {
+/* .alternative {
   display: flex;
   margin: 30px auto;
-}
+} */
 
 .btn-banner {
   border-radius: 70px;
-  background-color: #17b57d;
+  background-color: #FF7600;
   display: flex;
   justify-content: center;
   width: 300px;
   height: 60px;
   align-items: center;
   margin: 0 auto;
-  margin-top: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.btn-banner:hover {
+  transform: scale(0.9);
 }
 
 @media screen and (min-width: 1030px) {
@@ -1082,7 +1121,7 @@ section.banner {
     font-size: 30px;
   }
   .contact-banner .title {
-    margin: 0;
+    margin: 0 auto;
   }
 }
 
@@ -1105,7 +1144,7 @@ section.banner {
   margin-bottom: 15px;
   background: #010246;
   color: #fff;
-  border-top: 4px solid #1acc8d;
+  border-top: 4px solid #FF7600;
   text-align: center;
   padding: 30px 20px;
 }
@@ -1140,7 +1179,7 @@ section.banner {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #1acc8d;
+  background: #FF7600;
   color: #fff;
   text-decoration: none;
 }
@@ -1165,7 +1204,7 @@ section.banner {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #61ebba;
+  color: #FF7600;
   font-size: 18px;
   line-height: 1;
 }
@@ -1188,7 +1227,7 @@ section.banner {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #4be8b0;
+  color: #FF7600;
 }
 
 #footer .footer-top .footer-newsletter form {
@@ -1203,6 +1242,8 @@ section.banner {
   border: 0;
   padding: 4px;
   width: calc(100% - 110px);
+  outline: none;
+  background: #fff;
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit] {
@@ -1214,14 +1255,14 @@ section.banner {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #1acc8d;
+  background: #e46d05;
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit]:hover {
-  background: #149f6e;
+  background: #FF7600;
 }
 
 #footer .copyright {
