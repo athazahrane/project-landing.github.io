@@ -862,7 +862,6 @@ section {
 }
 
 .pricing .container{
-  overflow: hidden;
 }
 
 .pricing .container .pricing-content{
@@ -1060,6 +1059,7 @@ section.banner {
   width: 100%;
   overflow: hidden;
   align-items: center;
+  height: max-content;
 }
 
 .contact-banner .container-fluid .title {
@@ -1077,11 +1077,6 @@ section.banner {
   justify-content: center;
   flex-direction: column;
 }
-
-/* .alternative {
-  display: flex;
-  margin: 30px auto;
-} */
 
 .btn-banner {
   border-radius: 70px;
@@ -1166,6 +1161,16 @@ section.banner {
   }
   .col-7.content {
     width: 100%;
+  }
+  .first-circle {
+    width: 200px;
+    height: 200px;
+    margin-top: -175px;
+  }
+  .second-circle {
+    width: 250px;
+    height: 250px;
+    margin-top: 200px;
   }
 }
 @media screen and (max-width: 576px) {
