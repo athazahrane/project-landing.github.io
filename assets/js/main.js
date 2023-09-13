@@ -133,20 +133,33 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
+  function setIconActive() {
+    let navbarToggle = select('.mobile-nav-toggle');
+    navbarToggle.classList.add('active');
+    navbarToggle.style.color = 'blue'; // Atur warna ikon menjadi biru saat aktif
+  }
+  
+  // Fungsi untuk menghapus kelas "active" dari ikon
+  function removeIconActive() {
+    let navbarToggle = select('.mobile-nav-toggle');
+    navbarToggle.classList.remove('active');
+    navbarToggle.style.color = 'white'; // Atur warna ikon menjadi putih saat tidak aktif
+  }
+  
+  // Tambahkan event listener untuk mengubah ikon saat pengguna menggulir
+  window.addEventListener('scroll', function () {
+    let scrollPosition = window.scrollY;
+  
+    // Ganti ini dengan kode untuk menentukan kapan ikon harus aktif
+    // Misalnya, jika pengguna menggulir ke bagian tertentu dalam halaman
+    let targetScrollPosition = 500; // Contoh: ganti dengan posisi yang sesuai
+  
+    if (scrollPosition >= targetScrollPosition) {
+      setIconActive(); // Tambahkan kelas "active" pada ikon
+    } else {
+      removeIconActive(); // Hapus kelas "active" dari ikon
     }
-  }, true)
+  });
 
   /**
    * Scroll with ofset on page load with hash links in the url
